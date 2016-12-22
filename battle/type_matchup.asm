@@ -1,0 +1,57 @@
+	; Normal, Fighting, Flying, Poison, Ground, Rock, Bird, Bug, Ghost, Steel, Fairy, Gas, XX12, Sound, Tri, Prism, XX16, XX17, XX18, Curse, Fire, Water, Grass, Electric, Psychic, Ice, Dragon, Dark
+; Normal
+	type_matchup NTL, NTL, NTL, NTL, NTL, NVE, NTL, NTL, IMM, NVE, NTL, NTL, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; Fighting
+	type_matchup SE_, NTL, NVE, NVE, NTL, SE_, NTL, NVE, IMM, SE_, NVE, NVE, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, SE_, NTL, SE_
+; Flying
+	type_matchup NTL, SE_, NTL, NTL, NTL, NVE, NTL, SE_, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NVE, NTL, NTL, NTL, NTL
+; Poison
+	type_matchup NTL, NTL, NTL, NVE, NVE, NVE, NTL, NTL, NVE, IMM, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NTL, NTL, NTL
+; Ground
+	type_matchup NTL, NTL, IMM, SE_, NTL, SE_, NTL, NVE, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NVE, SE_, NTL, NTL, NTL, NTL
+; Rock
+	type_matchup NTL, NVE, SE_, NTL, NVE, NTL, NTL, SE_, NTL, NVE, NTL, NTL, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NTL, NTL, SE_, NTL, NTL
+; Bird
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; Bug
+	type_matchup NTL, NVE, NVE, NVE, NTL, NTL, NTL, NTL, NVE, NVE, NVE, NVE, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NTL, SE_, NTL, SE_, NTL, NTL, SE_
+; Ghost
+	type_matchup IMM, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NVE
+; Steel
+	type_matchup NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NTL, NVE, SE_, NTL, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NVE, NTL, NVE, NTL, SE_, NTL, NTL
+; Fairy
+	type_matchup NTL, SE_, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NTL, NTL, NTL, NTL, NTL, SE_, SE_
+; Gas
+	type_matchup NTL, SE_, NTL, NTL, NTL, NVE, NTL, NTL, NVE, NTL, SE_, NTL, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NVE, NTL, NTL, NVE, NTL, NTL
+; XX12
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; Sound
+	type_matchup NVE, NVE, NTL, NTL, NTL, NTL, NTL, NVE, SE_, SE_, NTL, SE_, NTL, IMM, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NTL
+; Tri
+	type_matchup NTL, NVE, SE_, NTL, IMM, NVE, NTL, SE_, NTL, NTL, NTL, SE_, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NVE, SE_, NTL, NTL, NTL, NVE, NTL
+; Prism
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; XX16
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; XX17
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; XX18
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; Curse
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL
+; Fire
+	type_matchup NTL, NTL, NTL, NTL, NTL, NVE, NTL, SE_, NTL, SE_, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NVE, SE_, NTL, NTL, SE_, NVE, NTL
+; Water
+	type_matchup NTL, NTL, NTL, NTL, SE_, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NVE, NVE, NTL, NTL, NTL, NVE, NTL
+; Grass
+	type_matchup NTL, NTL, NVE, NVE, SE_, SE_, NTL, NVE, NTL, NVE, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, SE_, NVE, NTL, NTL, NTL, NVE, NTL
+; Electric
+	type_matchup NTL, NTL, SE_, NTL, IMM, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NVE, NVE, NTL, NTL, NVE, NTL
+; Psychic
+	type_matchup NTL, SE_, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NTL, NTL, IMM
+; Ice
+	type_matchup NTL, NTL, SE_, NTL, SE_, NTL, NTL, NTL, NTL, NVE, NTL, SE_, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, NVE, SE_, NTL, NTL, NVE, SE_, NTL
+; Dragon
+	type_matchup NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NVE, IMM, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL
+; Dark
+	type_matchup NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NVE, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, NTL, SE_, NTL, NTL, NVE

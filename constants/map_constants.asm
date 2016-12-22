@@ -1,0 +1,255 @@
+GROUP_N_A  EQU -1
+MAP_N_A    EQU -1
+
+GROUP_NONE EQU 0
+MAP_NONE   EQU 0
+
+; map group ids
+INCLUDE "constants/map_dimension_constants.asm"
+
+; elevator floors
+
+	const_def
+	const _B4F
+	const _B3F
+	const _B2F
+	const _B1F
+	const _1F
+	const _2F
+	const _3F
+	const _4F
+	const _5F
+	const _6F
+	const _7F
+	const _8F
+	const _9F
+	const _10F
+	const _11F
+	const _ROOF
+
+; connection directions
+	const_def
+	const EAST_F
+	const WEST_F
+	const SOUTH_F
+	const NORTH_F
+
+	const_def
+	shift_const EAST
+	shift_const WEST
+	shift_const SOUTH
+	shift_const NORTH
+
+; permissions
+const_value SET 1
+	const TOWN
+	const ROUTE
+	const INDOOR
+	const CAVE
+	const PERM_5
+	const GATE
+	const DUNGEON
+
+; object struct
+	const_def
+	const OBJECT_SPRITE
+	const OBJECT_MAP_OBJECT_INDEX
+	const OBJECT_SPRITE_TILE
+	const OBJECT_MOVEMENTTYPE
+	const OBJECT_FLAGS1
+	const OBJECT_FLAGS2
+	const OBJECT_PALETTE
+	const OBJECT_DIRECTION_WALKING
+	const OBJECT_FACING
+	const OBJECT_STEP_TYPE
+	const OBJECT_STEP_DURATION
+	const OBJECT_ACTION
+	const OBJECT_STEP_FRAME
+	const OBJECT_FACING_STEP
+	const OBJECT_NEXT_TILE
+	const OBJECT_STANDING_TILE
+	const OBJECT_NEXT_MAP_X
+	const OBJECT_NEXT_MAP_Y
+	const OBJECT_MAP_X
+	const OBJECT_MAP_Y
+	const OBJECT_INIT_X
+	const OBJECT_INIT_Y
+	const OBJECT_RADIUS
+	const OBJECT_SPRITE_X
+	const OBJECT_SPRITE_Y
+	const OBJECT_SPRITE_X_OFFSET
+	const OBJECT_SPRITE_Y_OFFSET
+	const OBJECT_MOVEMENT_BYTE_INDEX
+	const OBJECT_28
+	const OBJECT_29
+	const OBJECT_30
+	const OBJECT_31
+	const OBJECT_RANGE
+	; const OBJECT_TELL_OFF_FLAG
+	; const OBJECT_TELL_OFF_COUNT
+; 35-39 are not used
+
+; map object struct
+	const_def
+	const MAPOBJECT_OBJECT_STRUCT_ID ; 0
+	const MAPOBJECT_SPRITE ; 1
+	const MAPOBJECT_Y_COORD ; 2
+	const MAPOBJECT_X_COORD ; 3
+	const MAPOBJECT_MOVEMENT ; 4
+	const MAPOBJECT_RADIUS ; 5
+	const MAPOBJECT_HOUR ; 6
+	const MAPOBJECT_TIMEOFDAY ; 7
+	const MAPOBJECT_COLOR ; 8
+	const MAPOBJECT_PARAMETER ; 9
+	const MAPOBJECT_SCRIPT_POINTER ; a
+	const MAPOBJECT_POINTER_HI ; b
+	const MAPOBJECT_EVENT_FLAG ; c
+	const MAPOBJECT_FLAG_HI ; d
+	const MAPOBJECT_E ; unused
+	const MAPOBJECT_F ; unused
+OBJECT_LENGTH EQU const_value
+
+MAPOBJECT_SCREEN_HEIGHT EQU 11
+MAPOBJECT_SCREEN_WIDTH EQU 12
+
+OW_DOWN  EQU DOWN  << 2
+OW_UP    EQU UP    << 2
+OW_LEFT  EQU LEFT  << 2
+OW_RIGHT EQU RIGHT << 2
+
+	const_def
+	const EMOTE_SHOCK ; 0
+	const EMOTE_QUESTION ; 1
+	const EMOTE_HAPPY ; 2
+	const EMOTE_SAD ; 3
+	const EMOTE_HEART ; 4
+	const EMOTE_BOLT ; 5
+	const EMOTE_SLEEP ; 6
+	const EMOTE_FISH ; 7
+	const EMOTE_SHADOW ; 8
+	const EMOTE_ROD ; 9
+	const EMOTE_BOULDER_DUST ; 10
+	const EMOTE_0B ; 11
+EMOTE_MEM EQU -1
+
+	const_def
+	const SIGNPOST_READ
+	const SIGNPOST_UP
+	const SIGNPOST_DOWN
+	const SIGNPOST_RIGHT
+	const SIGNPOST_LEFT
+	const SIGNPOST_IFSET
+	const SIGNPOST_IFNOTSET
+	const SIGNPOST_ITEM
+	const SIGNPOST_LOAD
+
+; I'm relocating spawn constants here, so that they can be used anywhere in the disassembly.
+
+
+const_value = -1
+	const SPAWN_N_A
+
+	const SPAWN_HOME
+
+	const SPAWN_CAPER_CITY
+	const SPAWN_OXALIS_CITY
+	const SPAWN_SPURGE_CITY
+	const SPAWN_HEATH_VILLAGE
+	const SPAWN_LAUREL_CITY
+	const SPAWN_TORENIA_CITY
+	const SPAWN_PHACELIA_TOWN
+	const SPAWN_ACANIA_DOCKS
+	const SPAWN_SAXIFRAGE_ISLAND
+	const SPAWN_PHLOX_TOWN
+	const SPAWN_ROUTE_86
+
+	const SPAWN_SEASHORE_CITY
+	const SPAWN_GRAVEL_TOWN
+	const SPAWN_MERSON_CITY
+	const SPAWN_HAYWARD_CITY
+	const SPAWN_OWSAURI_CITY
+	const SPAWN_MORAGA_TOWN
+	const SPAWN_JAERU_CITY
+	const SPAWN_BOTAN_CITY
+	const SPAWN_CASTRO_VALLEY
+	const SPAWN_EAGULOU_CITY
+	const SPAWN_RIJON_LEAGUE_OUTSIDE
+	const SPAWN_ROUTE_67
+	const SPAWN_AZALEA_TOWN
+	const SPAWN_GOLDENROD_CITY
+	const SPAWN_SAFFRON_CITY
+	const SPAWN_SOUTHERLY_CITY
+	
+	const SPAWN_BATTLE_TOWER_ENTRANCE
+	const SPAWN_SPURGE_GYM_1F
+	const SPAWN_ACQUA_START
+	const SPAWN_ACQUA_TUTORIAL
+
+	const SPAWN_LAUREL_FOREST_POKEMON_ONLY
+	const SPAWN_ROUTE_77
+	const SPAWN_ROUTE_81
+	const SPAWN_PRISON_F1
+NUM_SPAWNS EQU const_value
+
+	const_def
+	const PALETTE_AUTO
+	const PALETTE_DAY
+	const PALETTE_NITE
+	const PALETTE_MORN
+	const PALETTE_DARK
+
+INVISIBLE    EQU 0
+FIXED_FACING EQU 2
+SLIDING      EQU 3
+EMOTE_OBJECT EQU 7
+
+	const_def
+	const PERSONTYPE_SCRIPT
+	const PERSONTYPE_ITEMBALL
+	const PERSONTYPE_TRAINER
+	const PERSONTYPE_TMHMBALL
+	const PERSONTYPE_4
+	const PERSONTYPE_5
+	const PERSONTYPE_6
+
+; fruit trees
+const_value SET 1
+	const FRUITTREE_ROUTE_29      ; 01
+	const FRUITTREE_ROUTE_30_1    ; 02
+	const FRUITTREE_ROUTE_38      ; 03
+	const FRUITTREE_ROUTE_46_1    ; 04
+	const FRUITTREE_ROUTE_30_2    ; 05
+	const FRUITTREE_ROUTE_33      ; 06
+	const FRUITTREE_ROUTE_31      ; 07
+	const FRUITTREE_ROUTE_43      ; 08
+	const FRUITTREE_VIOLET_CITY   ; 09
+	const FRUITTREE_ROUTE_46_2    ; 0a
+	const FRUITTREE_ROUTE_35      ; 0b
+	const FRUITTREE_ROUTE_45      ; 0c
+	const FRUITTREE_ROUTE_36      ; 0d
+	const FRUITTREE_ROUTE_26      ; 0e
+	const FRUITTREE_ROUTE_39      ; 0f
+	const FRUITTREE_ROUTE_44      ; 10
+	const FRUITTREE_ROUTE_37_1    ; 11
+	const FRUITTREE_ROUTE_37_2    ; 12
+	const FRUITTREE_ROUTE_37_3    ; 13
+	const FRUITTREE_AZALEA_TOWN   ; 14
+	const FRUITTREE_ROUTE_42_1    ; 15
+	const FRUITTREE_ROUTE_42_2    ; 16
+	const FRUITTREE_ROUTE_42_3    ; 17
+	const FRUITTREE_ROUTE_11      ; 18
+	const FRUITTREE_ROUTE_2       ; 19
+	const FRUITTREE_ROUTE_1       ; 1a
+	const FRUITTREE_ROUTE_8       ; 1b
+	const FRUITTREE_PEWTER_CITY_1 ; 1c
+	const FRUITTREE_PEWTER_CITY_2 ; 1d
+	const FRUITTREE_FUCHSIA_CITY  ; 1e
+NUM_FRUIT_TREES EQU const_value +- 1
+
+CMDQUEUE_TYPE  EQU 0
+CMDQUEUE_ADDR  EQU 1
+CMDQUEUE_03    EQU 3
+CMDQUEUE_04    EQU 4
+CMDQUEUE_05    EQU 5
+CMDQUEUE_ENTRY_SIZE EQU 6
+CMDQUEUE_CAPACITY EQU 4

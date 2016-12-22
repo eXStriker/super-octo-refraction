@@ -1,0 +1,187 @@
+	define zero, 0
+	define source, 249
+	define target, 250
+	define message, 251
+	define address, 251
+	define banks, 252
+	define length, 253
+	define temp, 254
+	define result, 255
+
+	define BANK_SIZE, 0x4000
+	define BANKS, 128
+	define ROM_SIZE, 0x200000
+	define HASH_SIZE, 20
+
+Main:
+	call PrintInitialMessage
+	call DetectBase
+	call SelectTarget
+	callnz #source, ConvertCrystalVersion
+	call ApplyPrismPatch
+	callnz #target, MakeDebugVersion
+	length #length
+	ifne #length, ROM_SIZE, .patching_error
+	multiply #temp, #target, HASH_SIZE
+	add #temp, PrismHashes
+	checksha1 #result, #temp
+	jumpnz #result, .patching_error
+	print .completed
+	exit 0
+.patching_error
+	print .error
+	exit 1
+
+.completed
+	string "Patching completed!"
+.error
+	string "An error occurred while applying the patch. Please ensure that the base ROM and the patch are correct and try again."
+
+PrintInitialMessage:
+	bufstring .pokemon_prism_string
+	add #address, VersionInfo, 2
+	getbyteinc #temp, #address
+	bufnumber #temp
+	bufchar 0x2e ;0x2e is ASCII for '.'
+	getbytedec #temp, #address
+	bufnumber #temp
+	decrement #address
+	bufstring .comma_build_string
+	; build number is big endian
+	getbytedec #temp, #address
+	getbyte #result, #address
+	multiply #result, 0x100
+	add #1, #result, #temp
+	set #2, 4
+	call PrintWithLeadingZeros
+	bufstring .parenthesis_asterisks_string
+	printbuf
+	return
+	
+.pokemon_prism_string
+	string "*** Pokémon Prism patch (version "
+.comma_build_string
+	string ", build "
+.parenthesis_asterisks_string
+	string ") ***"
+
+DetectBase:
+	length #result
+	ifne #result, ROM_SIZE, .error
+	checksha1 #result, .crystal10
+	set #source, 1
+	set #message, .crystal10_message
+	jumpz #result, .done
+	checksha1 #result, .crystal11
+	decrement #source
+	set #message, .crystal11_message
+	jumpz #result, .done
+.error
+	print .error_message
+	exit 1
+.done
+	print #message
+	return
+
+.crystal10_message
+	string "Detected base: Pokémon Crystal v1.0"
+.crystal11_message
+	string "Detected base: Pokémon Crystal v1.1"
+.error_message
+	string "Invalid base ROM. Please use a US version of Pokémon Crystal v1.0 or v1.1."
+
+.crystal10
+	hexdata f4cd194bdee0d04ca4eac29e09b8e4e9d818c133
+.crystal11
+	hexdata f2f52230b536214ef7c9924f483392993e226cfb
+
+SelectTarget:
+	print .select_target
+	menu #target, .target_menu
+	retz #target
+	print .confirm_debug_1
+	print .confirm_debug_2
+	menu #result, .confirm_menu
+	retz #result
+	jump SelectTarget
+
+.select_target
+	string "Select the ROM you want to build:"
+
+.target_menu
+	dw .release_target
+	dw .debug_target
+	dw -1
+.release_target
+	string "Release version"
+.debug_target
+	string "Debug version"
+
+.confirm_debug_1
+	string "The debug version contains no additional game features, other than debug options intended to aid the development of the game."
+.confirm_debug_2
+	string "Are you sure you want to build the debug version?"
+
+.confirm_menu
+	dw .yes
+	dw .no
+	dw -1
+.yes
+	string "Yes"
+.no
+	string "No"
+
+ConvertCrystalVersion:
+	set #address, CrystalPatch
+	jump ApplyIPSPatch
+
+MakeDebugVersion:
+	set #address, DebugPatch
+	; fallthrough
+
+ApplyIPSPatch:
+	seek #zero
+	ipspatch #result, #address
+	return
+
+ApplyPrismPatch:
+	seek #zero
+	set #address, PrismPatch
+	set #banks, BANKS
+.loop
+	gethalfwordinc #length, #address
+	xordata #address, #length
+	add #address, #length
+	subtract #length, BANK_SIZE, #length
+	fillbyte #length, 0xff
+	decrement #banks
+	jumpnz #banks, .loop
+	truncatepos
+	return
+
+PrintWithLeadingZeros:
+	; prints number #1 in #2 digits, with leading zeros
+	push -0x30 ;so it will become 0 when 0x30 is added to it
+	increment #2
+	jump .handle_loop
+.push_loop
+	remainder #temp, #1, 10
+	divide #1, 10
+	push #temp
+.handle_loop
+	decrement #2
+	jumpnz #2, .push_loop
+.pop_loop
+	pop #temp
+	add #temp, 0x30 ;0x30 is ASCII for '0'
+	retz #temp
+	bufchar #temp
+	jump .pop_loop
+
+CrystalPatch: incbin "crystal.ips"
+DebugPatch: incbin "debug.ips"
+PrismPatch: incbin "xorpatch.bin"
+
+VersionInfo: include "version.txt"
+
+PrismHashes: include "hashes.txt"

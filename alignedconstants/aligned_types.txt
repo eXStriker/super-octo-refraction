@@ -1,0 +1,29 @@
+	const FIGHTING
+	const FLYING
+	const POISON
+	const GROUND
+	const ROCK
+	const BIRD
+	const BUG
+	const GHOST
+	const STEEL
+	const FAIRY_T
+	const GAS
+	const TYPE_12
+	const SOUND
+	const TRI_T
+	const PRISM_T
+	const TYPE_16
+	const TYPE_17
+	const TYPE_18
+	const CURSE_T
+	const FIRE
+	const WATER
+	const GRASS
+	const ELECTRIC
+	const PSYCHIC
+	const ICE
+	const DRAGON
+	const DARK
+
+; 0 = NORMAL

@@ -1,0 +1,228 @@
+	dw Script_farscall
+	dw Script_ptcall
+	dw Script_jump
+	dw Script_farjump
+	dw Script_ptjump
+	dw Script_if_equal
+	dw Script_if_not_equal
+	dw Script_iffalse ;8
+	dw Script_iftrue
+	dw Script_if_greater_than
+	dw Script_if_less_than
+	dw Script_jumpstd
+	dw Script_callstd
+	dw Script_callasm
+	dw Script_special
+	dw Script_ptcallasm ;10
+	dw Script_checkmaptriggers
+	dw Script_domaptrigger
+	dw Script_checktriggers
+	dw Script_dotrigger
+	dw Script_writebyte
+	dw Script_addvar
+	dw Script_random
+	dw Script_readarrayhalfword ;18
+	dw Script_copybytetovar
+	dw Script_copyvartobyte
+	dw Script_loadvar
+	dw Script_checkcode
+	dw Script_writevarcode
+	dw Script_writecode
+	dw Script_giveitem
+	dw Script_takeitem ;20
+	dw Script_checkitem
+	dw Script_givemoney
+	dw Script_takemoney
+	dw Script_checkmoney
+	dw Script_givecoins
+	dw Script_takecoins
+	dw Script_checkcoins
+	dw Script_writehalfword ;28
+	dw Script_pushhalfword
+	dw Script_pushhalfwordvar
+	dw Script_checktime
+	dw Script_checkpoke
+	dw Script_givepoke
+	dw Script_giveegg
+	dw Script_givefossil
+	dw Script_takefossil ;30
+	dw Script_checkevent
+	dw Script_clearevent
+	dw Script_setevent
+	dw Script_checkflag
+	dw Script_clearflag
+	dw Script_setflag
+	dw Script_wildon
+	dw Script_wildoff ;38
+	dw Script_warpmod
+	dw Script_blackoutmod
+	dw Script_warp
+	dw Script_readmoney
+	dw Script_readcoins
+	dw Script_RAM2MEM
+	dw Script_pokenamemem
+	dw Script_itemtotext ;40
+	dw Script_mapnametotext
+	dw Script_trainertotext
+	dw Script_stringtotext
+	dw Script_itemnotify
+	dw Script_pocketisfull
+	dw Script_opentext
+	dw Script_refreshscreen
+	dw Script_closetext ;48
+	dw Script_cmdwitharrayargs
+	dw Script_farwritetext
+	dw Script_writetext
+	dw Script_repeattext
+	dw Script_yesorno
+	dw Script_loadmenudata
+	dw Script_closewindow
+	dw Script_jumptextfaceplayer ;50
+	dw Script_farjumptext
+	dw Script_jumptext
+	dw Script_waitbutton
+	dw Script_buttonsound
+	dw Script_pokepic
+	dw Script_closepokepic
+	dw Script__2dmenu
+	dw Script_verticalmenu ;58
+	dw Script_scrollingmenu
+	dw Script_randomwildmon
+	dw Script_loadmemtrainer
+	dw Script_loadwildmon
+	dw Script_loadtrainer
+	dw Script_startbattle
+	dw Script_reloadmapafterbattle
+	dw Script_catchtutorial ;60
+	dw Script_trainertext
+	dw Script_trainerflagaction
+	dw Script_winlosstext
+	dw Script_scripttalkafter
+	dw Script_end_if_just_battled
+	dw Script_check_just_battled
+	dw Script_setlasttalked
+	dw Script_applymovement ;68
+	dw Script_applymovement2
+	dw Script_faceplayer
+	dw Script_faceperson
+	dw Script_variablesprite
+	dw Script_disappear
+	dw Script_appear
+	dw Script_follow
+	dw Script_stopfollow ;70
+	dw Script_moveperson
+	dw Script_writepersonxy
+	dw Script_loademote
+	dw Script_showemote
+	dw Script_spriteface
+	dw Script_follownotexact
+	dw Script_earthquake
+	dw Script_changemap ;78
+	dw Script_changeblock
+	dw Script_reloadmap
+	dw Script_reloadmappart
+	dw Script_writecmdqueue
+	dw Script_delcmdqueue
+	dw Script_playmusic
+	dw Script_encountermusic
+	dw Script_musicfadeout ;80
+	dw Script_playmapmusic
+	dw Script_dontrestartmapmusic
+	dw Script_cry
+	dw Script_playsound
+	dw Script_waitsfx
+	dw Script_warpsound
+	dw Script_passtoengine
+	dw Script_newloadmap ;88
+	dw Script_pause
+	dw Script_deactivatefacing
+	dw Script_priorityjump
+	dw Script_warpcheck
+	dw Script_ptpriorityjump
+	dw Script_return
+	dw Script_end
+	dw Script_reloadandreturn ;90
+	dw Script_end_all
+	dw Script_pokemart
+	dw Script_elevator
+	dw Script_trade
+	dw Script_pophalfwordvar
+	dw Script_swaphalfword
+	dw Script_swaphalfwordvar
+	dw Script_pushbyte ;98
+	dw Script_fruittree
+	dw Script_swapbyte
+	dw Script_loadarray
+	dw Script_verbosegiveitem
+	dw Script_verbosegiveitem2
+	dw Script_swarm
+	dw Script_halloffame
+	dw Script_credits ;a0
+	dw Script_warpfacing
+	dw Script_battletowertext
+	dw Script_landmarktotext
+	dw Script_trainerclassname
+	dw Script_name
+	dw Script_wait
+	dw Script_loadscrollingmenudata
+	dw Script_backupcustchar ;a8
+	dw Script_restorecustchar
+	dw Script_giveminingEXP
+	dw Script_givesmeltingEXP
+	dw Script_givejewelingEXP
+	dw Script_giveballmakingEXP
+	dw Script_giveTM
+	dw Script_checkash
+	dw Script_itemplural ;b0
+	dw Script_pullvar
+	dw Script_setplayersprite
+	dw Script_setplayercolor
+	dw Script_loadsignpost
+	dw Script_checkpokemontype
+	dw Script_giveorphanpoints
+	dw Script_takeorphanpoints
+	dw Script_checkorphanpoints ;b8
+	dw Script_startmirrorbattle
+	dw Script_comparevartobyte
+	dw Script_backupsecondpokemon
+	dw Script_restoresecondpokemon
+	dw Script_vartohalfwordvar
+	dw Script_pullhalfwordvar ;reloadpalette
+	dw Script_divideop ;giverolls
+	dw Script_givearcadetickets ;c0
+	dw Script_takearcadetickets
+	dw Script_checkarcadetickets
+	dw Script_checkarcadehighscore
+	dw Script_checkarcademaxround
+	dw Script_nop ;increasejewellinglevel
+	dw Script_nop ;increaseballmakinglevel
+	dw GetScriptWord ;showFX
+	dw Script_minpartylevel ;c8
+	dw Script_jumptable
+	dw Script_anonjumptable
+	dw Script_givebattlepoints
+	dw Script_takebattlepoints
+	dw Script_checkbattlepoints
+	dw Script_playwaitsfx
+	dw Script_scriptstartasm
+	dw Script_jumptextnoreopen ;d0
+	dw Script_endtext
+	dw Script_pushvar
+	dw Script_popvar
+	dw Script_swapvar
+	dw Script_getweekday
+	dw Script_milosswitch
+	dw Script_QRCode
+	dw Script_selse ;d8
+	dw Script_nop ;sendif, does nothing by itself
+	dw Script_siffalse
+	dw Script_siftrue
+	dw Script_sifgt
+	dw Script_siflt
+	dw Script_sifeq
+	dw Script_sifne
+	dw Script_readarray ;e0
+	dw Script_giveTMnomessage
+	dw Script_findpokemontype
+	dw Script_startpokeonly
+	dw Script_endpokeonly
