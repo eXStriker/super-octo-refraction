@@ -28,6 +28,7 @@ LaurelForestLab_Totodile:
 	restoresecondpokemon
 	clearflag ENGINE_POKEMON_MODE
 	clearflag ENGINE_USE_TREASURE_BAG
+	blackoutmod LAUREL_CITY
 	warp LAUREL_FOREST_MAIN, 36, 4
 	spriteface 0, 2
 	showemote EMOTE_HEART, 4, 40
